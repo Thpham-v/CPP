@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/10 02:43:23 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/10 05:19:56 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Zombie.hpp"
 
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
-
-class contact
+int	main()
 {
-	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
+	Zombie	stack("stack");
+	Zombie	*heap = newZombie("heap");
 	
-	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
-};
-
-#endif
+	stack.announce();
+	heap->announce();
+	randomChump("stack2");
+	delete heap;
+	return (0);
+}

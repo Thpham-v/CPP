@@ -5,31 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:27:38 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:52:50 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/18 01:42:48 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/18 01:43:04 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "Fixed.hpp"
 
-int	main(void)
+int	main()
 {
-	std::string		input;
-	PhoneBook		book;
-	
-	while (!std::cin.eof())
-	{
-		book.prompt();
-		getline(std::cin, input);
-		if (input == "EXIT")
-			break;
-		else if (input == "ADD")
-			book.add();
-		else if (input == "SEARCH")
-			book.search();
-		else if (!input.empty())
-			std::cout << "\nError please enter valid command" << std::endl;
-		std::cout << "\n*********************************\n" << std::endl;
-	}
+	Fixed		a;
+	Fixed const	b(10);
+	Fixed const	c(42.42f);
+	Fixed const d(b);
+
+	a = Fixed(1234.4321f);
+
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
 	return (0);
 }

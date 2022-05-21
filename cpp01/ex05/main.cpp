@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/13 03:24:48 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/13 03:25:59 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Harl.hpp"
 
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
-
-class contact
+int	main(void)
 {
-	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
-	
-	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
-};
+	Harl	harl;
 
-#endif
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	
+	return (0);
+}

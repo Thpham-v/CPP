@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/10 06:45:11 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/10 06:52:52 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Weapon.hpp"
 
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
-
-class contact
+Weapon::Weapon(std::string const type): _type(type)
 {
-	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
-	
-	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
-};
+}
 
-#endif
+Weapon::~Weapon()
+{
+}
+
+std::string	const &		Weapon::getType() const
+{
+	return (_type);
+}
+
+void	Weapon::setType(std::string type)
+{
+	_type = type;
+}

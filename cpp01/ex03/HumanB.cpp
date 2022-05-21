@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 05:47:26 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 22:48:10 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/10 07:51:10 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/10 07:54:34 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "HumanB.hpp"
 
-std::string		ft_toupper(std::string str)
+HumanB::HumanB(std::string const name): _name(name), _weapon(NULL)
 {
-	std::string::iterator it;
-	
-	for (it = str.begin(); it != str.end(); it++)
-		*it = std::toupper(*it);
-	return (str);
 }
 
-int main(int ac, char **av) 
+HumanB::~HumanB()
 {
-	std::string	res;
-	int i;
-	
-	if (ac == 1)
-		res = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	std::cout << _name << " died" << std::endl;
+	return ;
+}
+
+void	HumanB::attack() const
+{
+	std::cout << _name << " attacks with their ";
+	if (_weapon)
+		std::cout << _weapon->getType() << std::endl;
 	else
-	{
-		for (i = 1; i< ac; i++)
-			res.append(ft_toupper(av[i]));
-	}
-	std::cout << res << std::endl;
-	return (0);
+		std::cout << "hands" << std::endl;
+}
+
+void	HumanB::setWeapon(Weapon& weapon)
+{
+	_weapon = &weapon;
+	return ;
 }

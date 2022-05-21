@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/21 03:32:53 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/21 04:53:20 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
+# include "ClapTrap.hpp"
 
-class contact
-{
-	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
-	
+class FragTrap : public ClapTrap
+{	
 	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
+		FragTrap();
+		~FragTrap();
+		FragTrap(std::string name);
+		FragTrap(FragTrap const & src);
+		FragTrap &		operator=(FragTrap const & rhs);
+		
+		void			attack(std::string const & target);
+		void			highFivesGuys();
 };
 
 #endif

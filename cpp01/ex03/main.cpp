@@ -5,31 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:27:38 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:52:50 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/10 07:56:10 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/10 07:57:54 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int	main(void)
 {
-	std::string		input;
-	PhoneBook		book;
-	
-	while (!std::cin.eof())
 	{
-		book.prompt();
-		getline(std::cin, input);
-		if (input == "EXIT")
-			break;
-		else if (input == "ADD")
-			book.add();
-		else if (input == "SEARCH")
-			book.search();
-		else if (!input.empty())
-			std::cout << "\nError please enter valid command" << std::endl;
-		std::cout << "\n*********************************\n" << std::endl;
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	
 	return (0);
 }

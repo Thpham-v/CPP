@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/10 06:13:11 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/10 06:13:39 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include <iostream>
 
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
-
-class contact
+int	main()
 {
-	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
+	std::string		string = "HI THIS IS BRAIN";
+	std::string*	stringPTR = &string;
+	std::string&	stringREF = string;
 	
-	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
-};
+	std::cout	<< &string << std::endl
+				<< stringPTR << std::endl
+				<< &stringREF << std::endl;
 
-#endif
+	std::cout	<< string << std::endl
+				<< *stringPTR << std::endl
+				<< stringREF << std::endl;
+	return (0);
+}

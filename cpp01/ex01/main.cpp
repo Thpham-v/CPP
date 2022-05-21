@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/10 05:48:21 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/10 05:54:38 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Zombie.hpp"
 
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
-
-class contact
+int	main(int ac, char **av)
 {
-	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
+	Zombie	*horde;
+	int		N;
 	
-	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
-};
-
-#endif
+	if (ac != 2)
+	{
+		std::cout << "Wrong number of arguments" << std::endl;
+		return (1);
+	}
+	N = std::atoi(av[1]);
+	if (N > 0)
+	{
+		horde = zombieHorde(N, "vinc");
+		for (int i = 0; i < N; i++)
+			horde[i].announce();
+		delete [] horde;
+	}
+	return (0);
+}

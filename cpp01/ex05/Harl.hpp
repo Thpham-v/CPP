@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/13 03:13:46 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/13 03:54:04 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-# include <cstdlib>
 # include <iostream>
-# include <iomanip>
 
-class contact
+class Harl
 {
 	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
-	
+		void		_debug();
+		void		_info();
+		void		_warning();
+		void		_error();
+		std::string	_levels[4];
+		void		(Harl::*_f[4])(void);
+		
 	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
+		Harl();
+		~Harl();
+		void	complain(std::string level);
 };
 
 #endif

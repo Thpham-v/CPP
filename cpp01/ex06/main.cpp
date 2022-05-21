@@ -5,31 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:27:38 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:52:50 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/13 03:41:37 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/13 03:51:31 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "Harl.hpp"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	std::string		input;
-	PhoneBook		book;
+	Harl	harl;
+	enum	level_enum{DEBUG, INFO, WARNING, ERROR};
+	int		level_id;
 	
-	while (!std::cin.eof())
+	if (ac != 2)
 	{
-		book.prompt();
-		getline(std::cin, input);
-		if (input == "EXIT")
-			break;
-		else if (input == "ADD")
-			book.add();
-		else if (input == "SEARCH")
-			book.search();
-		else if (!input.empty())
-			std::cout << "\nError please enter valid command" << std::endl;
-		std::cout << "\n*********************************\n" << std::endl;
+		std::cerr << "Usage: <LOG_LEVEL>" << std::endl;
+		return (1);
 	}
+
+	for (level_id = 0; level_id < 4; level_id++)
+		if (harl.getLevel(level_id) == av[1])
+			break;
+	switch	(level_id)
+	{
+		case DEBUG:
+			harl.complain("DEBUG");
+		case INFO:
+			harl.complain("INFO");
+		case WARNING:
+			harl.complain("WARNING");
+		case ERROR:
+			harl.complain("ERROR");
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break ;
+	}
+	
 	return (0);
 }

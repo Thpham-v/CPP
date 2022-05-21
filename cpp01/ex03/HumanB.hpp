@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/10 07:48:13 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/11 03:34:00 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-# include <cstdlib>
-# include <iostream>
-# include <iomanip>
+#include "Weapon.hpp"
 
-class contact
+class HumanB
 {
 	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
-	
+		std::string	const	_name;
+		Weapon*				_weapon;	
+
 	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
+		HumanB(std::string const name);
+		~HumanB();
+		void	attack() const;
+		void	setWeapon(Weapon& weapon);
 };
 
 #endif

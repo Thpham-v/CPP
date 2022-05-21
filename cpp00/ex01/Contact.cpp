@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 04:39:19 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/07 06:17:25 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/05/19 00:03:06 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 contact::contact(void)
 {
-	return;
 }
 
 contact::~contact(void)
 {
-	return;
 }
 
 void	contact::add(void)
 {
-	std::cout << "First name: ";
+	std::cout << "\n" << "First name: ";
 	std::cin >> this->_infos[firstname];
 	std::cout << "last name: ";
 	std::cin >> this->_infos[lastname];

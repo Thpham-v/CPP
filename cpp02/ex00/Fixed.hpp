@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 02:34:53 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 23:45:09 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/05/17 04:29:45 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/05/18 03:52:37 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-# include <cstdlib>
 # include <iostream>
-# include <iomanip>
 
-class contact
+class Fixed
 {
 	private:
-		enum type
-		{
-			firstname,
-			lastname,
-			nickname,
-			phonenumber,
-			dark_secret,
-		};
-		std::string _infos[5];
-	
+		int					_RawBits;
+		static int const	_FractBits = 8;
 	public:
-		contact(void);
-		~contact(void);
-		void	add(void);
-		void	display1(int index);
-		void	display2(void);
+		Fixed();
+		Fixed(Fixed const & src);
+		~Fixed();
+		Fixed &	operator=(Fixed const & rhs);
+
+		int		getRawBits() const;
+		void	setRawBits(int const raw);
 };
 
 #endif
