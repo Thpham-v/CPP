@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/18 03:53:45 by thpham-v          #+#    #+#              #
-#    Updated: 2022/06/30 21:35:17 by thpham-v         ###   ########.fr        #
+#    Created: 2022/06/01 05:15:06 by thpham-v          #+#    #+#              #
+#    Updated: 2022/06/02 03:37:39 by thpham-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	fixed
-SRCS			=	main.cpp	\
-					Fixed.cpp		
+NAME			=	exceptions
+SRCS			=	main.cpp		\
+					Bureaucrat.cpp
 CC				=	@c++
 FLAGS			=	-Wall -Wextra -Werror -std=c++98
 OBJDIR			=	objs

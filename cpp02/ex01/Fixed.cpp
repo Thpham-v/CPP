@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 06:55:05 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/18 01:40:42 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/06/29 17:16:07 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ Fixed::Fixed(float const f)
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->_RawBits = roundf(f * (1 << this->_FractBits));
+	
+	
 	// this->_RawBits = roundf(f * 256);
 	// this->_RawBits = roundf(f * pow(2, this->_FractBits));
 }
@@ -80,6 +82,6 @@ int			Fixed::toInt(void) const
 
 std::ostream &	operator<<(std::ostream & o, Fixed const & rhs)
 {
-	o << rhs.toFloat();
+	o << rhs.toFloat(); // On appel toFloat parce que dans le sujet on peut voir dans l'exemple que la sorti est en float
 	return (o);
 }

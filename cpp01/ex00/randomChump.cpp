@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 02:33:43 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/10 02:35:25 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/06/28 18:38:34 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	randomChump(std::string name)
 {
-	Zombie new_zombie(name);
-	new_zombie.announce();
+	Zombie zombie(name);
+	zombie.announce();
 	return;
 }
