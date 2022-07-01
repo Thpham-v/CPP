@@ -5,16 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/19 06:33:34 by thpham-v          #+#    #+#              #
-#    Updated: 2022/07/01 19:09:50 by thpham-v         ###   ########.fr        #
+#    Created: 2022/05/23 03:59:46 by thpham-v          #+#    #+#              #
+#    Updated: 2022/07/01 19:02:54 by thpham-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	ClapTrap
+NAME			=	brain
 SRCS			=	main.cpp		\
-					ClapTrap.cpp	\
-					ScavTrap.cpp	\
-					FragTrap.cpp
+					AAnimal.cpp		\
+					Dog.cpp			\
+					Cat.cpp			\
+					Brain.cpp
 CC				=	@c++
 FLAGS			=	-Wall -Wextra -Werror -std=c++98
 OBJDIR			=	objs

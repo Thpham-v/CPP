@@ -6,14 +6,14 @@
 #    By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 06:33:34 by thpham-v          #+#    #+#              #
-#    Updated: 2022/05/19 06:33:41 by thpham-v         ###   ########.fr        #
+#    Updated: 2022/07/01 19:09:35 by thpham-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	ClapTrap
 SRCS			=	main.cpp		\
 					ClapTrap.cpp
-CC				=	@clang++
+CC				=	@c++
 FLAGS			=	-Wall -Wextra -Werror -std=c++98
 OBJDIR			=	objs
 OBJS			=	$(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))

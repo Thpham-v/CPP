@@ -6,7 +6,7 @@
 #    By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 06:33:34 by thpham-v          #+#    #+#              #
-#    Updated: 2022/05/21 05:57:11 by thpham-v         ###   ########.fr        #
+#    Updated: 2022/07/01 19:10:00 by thpham-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS			=	main.cpp		\
 					ScavTrap.cpp	\
 					FragTrap.cpp	\
 					DiamondTrap.cpp
-CC				=	@clang++
+CC				=	@c++
 FLAGS			=	-Wall -Wextra -Werror -std=c++98
 OBJDIR			=	objs
 OBJS			=	$(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))

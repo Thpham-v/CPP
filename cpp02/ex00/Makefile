@@ -6,14 +6,14 @@
 #    By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 04:28:10 by thpham-v          #+#    #+#              #
-#    Updated: 2022/05/17 04:28:37 by thpham-v         ###   ########.fr        #
+#    Updated: 2022/07/01 20:01:41 by thpham-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	fixed
 SRCS			=	main.cpp		\
 					Fixed.cpp
-CC				=	@clang++
+CC				=	@c++
 FLAGS			=	-Wall -Wextra -Werror -std=c++98
 OBJDIR			=	objs
 OBJS			=	$(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
