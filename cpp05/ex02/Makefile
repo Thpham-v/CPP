@@ -6,14 +6,18 @@
 #    By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 05:15:06 by thpham-v          #+#    #+#              #
-#    Updated: 2022/07/03 18:29:02 by thpham-v         ###   ########.fr        #
+#    Updated: 2022/07/04 01:33:46 by thpham-v         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	exceptions
-SRCS			=	main.cpp		\
-					Bureaucrat.cpp	\
-					Form.cpp
+SRCS			=	main.cpp					\
+					Bureaucrat.cpp				\
+					Form.cpp					\
+					ShrubberyCreationForm.cpp	\
+					RobotomyRequestForm.cpp		\
+					PresidentialPardonForm.cpp
+
 CC				=	@c++
 FLAGS			=	-Wall -Wextra -Werror -std=c++98
 OBJDIR			=	objs
@@ -30,7 +34,7 @@ ${OBJDIR}/%.o	:	%.cpp
 				$(CC) $(FLAGS) -c $< -o $@
 
 clean			:
-				@rm -rf $(OBJDIR)
+				@rm -rf $(OBJDIR) trees_shrubbery
 				@echo "\033[1;30m[$(OBJDIR)] : \033[1;31mdeleted !\033[0m"
 
 fclean			:	clean

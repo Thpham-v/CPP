@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 03:58:52 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/24 04:39:52 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/07/02 22:23:44 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog()
 	this->_brain = new Brain;
 }
 
-Dog::Dog(Dog const & src) : Animal()
+Dog::Dog(Dog const & src) : Animal(), _brain(NULL)
 {
 	std::cout << "Dog copy class created" << std::endl;
 	*this = src;
@@ -36,6 +36,8 @@ Dog &	Dog::operator=(Dog const & rhs)
 	if (this != &rhs)
 	{
 		this->_type = rhs.getType();
+		if (this->_brain)
+			delete this->_brain;
 		this->_brain = new Brain(*rhs._brain);
 	}
 	return (*this);

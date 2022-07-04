@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 03:59:17 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/23 04:14:18 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/07/02 19:29:58 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ int	main(void)
 	WrongAnimal *wrong = new WrongAnimal();
 	std::cout << "\n";
 	WrongAnimal	*wrongCat = new WrongCat;
-	std::cout	<< std::endl
-				<< wrong->getType() << ": ";
+	
+	std::cout	<< "\n" << wrong->getType() << ": ";
 	wrong->makeSound();
 	std::cout	<< wrongCat->getType() << ": ";
 	wrongCat->makeSound();
 
-	std::cout << "\n";
+	std::cout << std::endl;
 	
 	delete wrong;
 	delete wrongCat;

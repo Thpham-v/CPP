@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 05:15:03 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/06/23 03:04:03 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/07/03 17:11:25 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	main()
 	{
 		try
 		{
-			Bureaucrat	badGrade1("Bob", 0);
+			Bureaucrat	badGrade1("Yoyo", 0);
+			std::cout << badGrade1.getName(); // cette ligne ne va pas etre executee -> exception gradeTooHighException
 		}
 		catch (const std::exception& e)
 		{
@@ -26,7 +27,7 @@ int	main()
 		
 		try
 		{
-			Bureaucrat	badGrade2("Paul", 154);
+			Bureaucrat	badGrade2("Raph", 155);
 		}
 		catch (const std::exception& e)
 		{
@@ -40,7 +41,7 @@ int	main()
 		{
 			Bureaucrat low1("low1", 150);
 			low1.decreaseGrade();
-			std::cout << low1 << std::endl;	// cette ligne ne va pas etre executee car il y a l'exception gradeTooLowException
+			std::cout << low1 << std::endl;	// cette ligne ne va pas etre executee -> exception gradeTooHighException
 			
 		}
 		catch (const std::exception &e)
@@ -78,7 +79,7 @@ int	main()
 		{
 			Bureaucrat high2("high2", 1);
 			high2.increaseGrade();
-			std::cout << high2 << std::endl;	// cette ligne ne va pas etre executee car il y a l'exception gradeTooLowException
+			std::cout << high2 << std::endl;	// cette ligne ne va pas etre executee -> gradeTooLowException
 		}
 		catch (const std::exception &e)
 		{

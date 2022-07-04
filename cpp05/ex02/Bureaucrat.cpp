@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 05:14:54 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/07/03 17:06:40 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/07/03 21:33:13 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,29 @@ void		Bureaucrat::decreaseGrade()
 	if (this->_grade >= 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade++;
+}
+
+void				Bureaucrat::signForm(Form & form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signs form " << form.getName() << "." << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << this->_name << "  couldn't sign " << form.getName() << " because: " << e.what() << std::endl;
+	}
+	return ;
+}
+
+void				Bureaucrat::executeForm(Form const & form)
+{
+	if (form.execute(*this) == true)
+		std::cout << this->_name << " executs " << form.getName() << "." << std::endl;
+	else
+		std::cerr	<< this->_name << " can not execute " << form.getName() << "." << std::endl;
+	return ;
 }
 
 std::ostream &		operator<<(std::ostream & o, Bureaucrat const & rhs)

@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 03:59:17 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/07/01 19:07:52 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/07/02 22:43:29 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(void)
 	{
 		//AAnimal	*meta = new AAnimal();
 		//std::cout << "\n";
+
 		AAnimal	*dog = new Dog();
 		std::cout << "\n";
 		AAnimal	*cat = new Cat();
@@ -30,6 +31,7 @@ int	main(void)
 		cat->makeSound();
 
 		std::cout << "\n";
+		
 		//delete meta;
 		delete dog;
 		delete cat;
@@ -57,20 +59,20 @@ int	main(void)
 
 		std::cout << "\n";
 
-		AAnimal	*dog = new Dog();
-		AAnimal	*cat = new Cat();
+		Dog	dog;
+		Cat	cat;
 
 		std::cout << std::endl;
 
-		std::cout << "dog brain: " << std::endl;
-		static_cast<Dog *>(dog)->getBrain().printIdeas();
+		std::cout << "dog1 brain: " << std::endl;
+		dog.getBrain().printIdeas();
 
-		static_cast<Dog *>(dog)->getBrain().setIdea(5, "manger");
-		std::cout << "dog brain: " << std::endl;
-		static_cast<Dog *>(dog)->getBrain().printIdeas();
+		dog.getBrain().setIdea(5, "manger");
+		std::cout << "dog1 brain: " << std::endl;
+		dog.getBrain().printIdeas();
 
 		std::cout << std::endl;
-		Dog dog2(*static_cast<Dog *>(dog));
+		Dog dog2(dog);
 		std::cout << std::endl;
 
 		std::cout << "dog2 brain: " << std::endl;
@@ -82,9 +84,37 @@ int	main(void)
 
 		std::cout << std::endl;
 		
+		std::cout << "dog1 brain: " << std::endl;
+		dog.getBrain().printIdeas();
 		
-		delete dog;
-		delete cat;
+		std::cout << "/----------------------------------------------------------------------------------------------------------------/\n" << std::endl;
+		
+		/*---------------------------------------------------------------------------*/
+		
+		std::cout << "cat1 brain: " << std::endl;
+		cat.getBrain().printIdeas();
+
+		cat.getBrain().setIdea(5, "manger");
+		std::cout << "cat1 brain: " << std::endl;
+		cat.getBrain().printIdeas();
+
+		std::cout << std::endl;
+		Cat cat2(cat);
+		std::cout << std::endl;
+
+		std::cout << "cat2 brain: " << std::endl;
+		cat2.getBrain().printIdeas();
+
+		cat2.getBrain().setIdea(10, "boire");
+		std::cout << "cat2 brain: " << std::endl;
+		cat2.getBrain().printIdeas();
+
+		std::cout << std::endl;
+		
+		std::cout << "cat1 brain: " << std::endl;
+		cat.getBrain().printIdeas();
+		
+		std::cout << std::endl;
 	}
 
 	return (0);

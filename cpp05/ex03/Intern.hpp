@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 03:59:07 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/07/02 19:44:22 by thpham-v         ###   ########.fr       */
+/*   Created: 2022/07/04 04:23:55 by thpham-v          #+#    #+#             */
+/*   Updated: 2022/07/04 04:24:23 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "ShrubberyCreationForm.hpp"
+# include "RobotomyRequestForm.hpp"
+# include "PresidentialPardonForm.hpp"
 
-class		Dog : public Animal
-{	
-	private:
-		Brain	*_brain;
+class		Intern
+{
 	public:
-		Dog(void);
-		Dog(Dog const & src);
-		~Dog(void);
-		Dog &	operator=(Dog const & rhs);
-		void	makeSound(void);
-		Brain & 	getBrain(void) const;
+		Intern(void);
+		Intern(Intern const & src);
+		virtual	~Intern(void);
+		Intern &		operator=(Intern const & rhs);
+		Form *			makeForm(std::string name, std::string target);
 };
 
 #endif

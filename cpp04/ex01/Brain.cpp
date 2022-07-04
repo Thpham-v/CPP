@@ -6,7 +6,7 @@
 /*   By: thpham-v <thpham-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 04:53:01 by thpham-v          #+#    #+#             */
-/*   Updated: 2022/05/23 06:01:18 by thpham-v         ###   ########.fr       */
+/*   Updated: 2022/07/02 22:06:29 by thpham-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ void			Brain::printIdeas() const
 		if (i != 99)
 			std::cout << " ";
 	}
-	std::cout << std::endl;
+	std::cout << "\n" << std::endl;
 }
